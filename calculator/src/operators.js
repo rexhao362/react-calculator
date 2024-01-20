@@ -16,5 +16,13 @@ class Operators {
 
     pi = () => Math.PI
 
+    nRoot = () => Math.pow(this.a, 1/this.b)
+
+    fraction = () => this.a/this.b
+
+    percent = () => (this.a/this.b) * 100
+
     
 }
+
+module.exports = Operators
