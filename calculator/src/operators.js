@@ -1,28 +1,25 @@
-class Operators {
-    constructor(a, b) {
-        this.a = a
-        this.b = b
-    }
 
-    add = () => this.a + this.b
 
-    sub = () => this.a - this.b
+const add = (a, b) => a + b
 
-    mul = () => this.a * this.b
+const sub = (a, b) => a - b
 
-    div = () => this.a / this.b
+const mul = (a, b) => a * b
 
-    pow = () => Math.pow(this.a, this.b)
+const div = (a, b) => a / b
 
-    pi = () => Math.PI
+const pow = (a, b) => Math.pow(a, b)
 
-    nRoot = () => Math.pow(this.a, 1/this.b)
+const  pi = () => Math.PI
 
-    fraction = () => this.a/this.b
+const nRoot = (a, b) => Math.pow(a, 1/b)
 
-    percent = () => (this.a/this.b) * 100
+const fraction = (a, b) => a/b
 
-    
+const percent = (a, b) => (a/b) * 100
+
+
+
+module.exports = {
+    add, sub, mul, div, pow, pi, nRoot, fraction, percent
 }
-
-module.exports = Operators
