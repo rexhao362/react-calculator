@@ -1,6 +1,6 @@
 import { Button } from 'react-native'
 
-export const createButton = (symbol, name, func) => {
+const createButton = (symbol, name, func) => {
     return (
         <Button
             title={symbol}
@@ -10,4 +10,4 @@ export const createButton = (symbol, name, func) => {
     )
 }
 
-// module.exports = createButton
+module.exports = createButton

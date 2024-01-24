@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { SafeAreaView, Text, View } from 'react-native'
 const styles = require('./src/styles')
 const createButton = require('./src/button');
+const Row = require('./src/row')
 const {
     add,
     sub,
@@ -47,35 +48,41 @@ export default function App() {
         setOperator(null)
     }
 
+
+
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
             <SafeAreaView>
                 <Text style={styles.displayedValue}>{displayValue}</Text>
-                <Text>67877988809</Text>
-                <Row></Row>
-                <Row></Row>
+                <Row>
+                    {createButton('x^y', 'Power', handleOperator(pow))}
+                    {createButton('Pi', 'Pi', displayNumber(pi))}
+                    {createButton('x^(1/y)', 'Nth Root', handleOperator(nRoot))}
+                    {createButton('x/y', 'Fraction', handleOperator(fraction))}
+                    {createButton('%', 'Percent', handleOperator(percent))}
+                </Row>
                 <Row>
                     {createButton('C', 'Clear', clearInput())} 
-                    {createButton('/', 'Divide', setOperator(div))}
+                    {createButton('/', 'Divide', handleOperator(div))}
                 </Row>
                 <Row>
                     {createButton('7', '7', displayNumber('7'))}
                     {createButton('8', '8', displayNumber('8'))}
                     {createButton('9', '9', displayNumber('9'))} 
-                    {createButton('X', 'Multiply', setOperator(mul))}
+                    {createButton('X', 'Multiply', handleOperator(mul))}
                 </Row>
                 <Row>
                     {createButton('4', '4', displayNumber('4'))}
                     {createButton('5', '5', displayNumber('5'))}
                     {createButton('6', '6', displayNumber('6'))}
-                    {createButton('-', 'Minus', setOperator(sub))}
+                    {createButton('-', 'Minus', handleOperator(sub))}
                 </Row>
                 <Row>
                     {createButton('1', '1', displayNumber('1'))}
                     {createButton('2', '2', displayNumber('2'))}
                     {createButton('3', '3', displayNumber('3'))}
-                    {createButton('+', 'Plus', setOperator(add))}
+                    {createButton('+', 'Plus',handleOperator(add))}
                 </Row>
                 <Row>
                     {createButton('=', '=', calculate())}
